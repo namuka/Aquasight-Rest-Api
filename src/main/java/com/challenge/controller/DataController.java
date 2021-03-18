@@ -33,6 +33,7 @@ public class DataController {
 	public List<Data> getAll(
 			@RequestParam(name="start", required=false, defaultValue = "") @DateTimeFormat(pattern="yyyy-MM-dd") Date startDate, 
 			@RequestParam(name="end", required=false, defaultValue = "")  @DateTimeFormat(pattern="yyyy-MM-dd") Date endDate){
+		System.out.println("startDate: " + startDate + ", endDate: " + endDate);
 		if(startDate!=null && endDate!=null) 
 			return service.findAllByTimeStampBetween(startDate, endDate);
 		
